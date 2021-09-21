@@ -1,0 +1,56 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+#header {
+    height: 90px;
+
+}
+
+#logo {
+    height: 50px;
+    background-color: #17558a;
+}
+
+#logo > img {
+    height: 40px;
+    margin-top: 5px;
+}
+
+#nav-menu, #footer {
+    background-color: #1b63a2;
+}
+
+#nav-menu {
+    height: 40px;
+    position: sticky;
+}
+
+#nav-menu ul {
+    list-style-type: none;
+}
+
+#nav-menu ul li,
+#footer ul li {
+    display: inline-block;
+    line-height: 40px;
+}
+
+#nav-menu ul li:first-child a {
+    padding-left: 20px;
+}
+
+#nav-menu ul li a,
+#bottom-menu ul li a,
+#footer p{
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+}
+
+#nav-menu ul li a:hover {
+    color: red;
+}

@@ -1,0 +1,74 @@
+#main {
+    margin: 25px;
+}
+
+#main > h3 {
+    font-size: x-large;
+    font-weight: normal;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+#main > h3 > a {
+    text-decoration: none;
+    color: black;
+    text-shadow: 1px 3px 2px rgb(0 0 0 / 30%);
+}
+
+article {
+    box-shadow: -1px 0 2px 0 rgb(1 1 1 / 12%), 1px 0 2px 0 rgb(1 1 1 / 12%), 0 1px 1px 0 rgb(1 1 1 / 24%);
+    width: 340px;
+    height: 280px;
+    background-color: #dfdfdf;
+}
+
+.item-heading {
+    margin: 0.1rem;
+    border-bottom: 1px solid #b9b9b9;
+}
+
+.item-heading > a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: black;
+}
+
+.item-heading > a:hover {
+    color: red;
+}
+
+.item-content {
+    height: 64%;
+    background-color: aliceblue;
+    border-radius: 2px;
+    border-top: 1px black;
+}
+
+.item-content > p {
+    word-wrap: anywhere;
+    text-align: justify;
+    overflow: hidden;
+}
+
+.item {
+    margin-right: 1.2rem;
+}
+
+.item-footer {
+    height: 10%;
+    border-top: 2px black;
+}
+
+.item-footer > a {
+    text-decoration: none;
+    line-height: 1rem;
+    color: black;
+    opacity: 80%;
+}
+
+.item-footer > a > img {
+    height: 100%;
+}
+
+.item-footer > a > p {
+    padding-top: 0.5rem;
+}
