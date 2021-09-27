@@ -10,85 +10,9 @@ class HomeController extends Controller
     {
         $post = new Post();
         $posts = $post->all();
-        $networks = [
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-        ];
-        $ccna = [
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-        ];
-        $linux = [
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-            [
-                'title' => 'Computer Peripheral Devices and Their Functions',
-                'content' => 'This tutorial explains computer peripheral devices and their functions. Learn what a peripheral device is and how many types of peripheral devices are'
-            ],
-        ];
-
+        $networks = Post::query("SELECT * FROM `posts` WHERE `type` = 'network' LIMIT 1,10");
+        $ccna = Post::query("SELECT * FROM `posts` WHERE `type` = 'ccna' LIMIT 1,10");
+        $linux = Post::query("SELECT * FROM `posts` WHERE `type` = 'linux' LIMIT 1,10");
         return $this->view('layouts/app', ['page' => 'home', 'network' => $networks, 'ccna' => $ccna, 'linux' => $linux]);
     }
 

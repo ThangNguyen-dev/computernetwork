@@ -12,4 +12,15 @@ class Controller
     {
         require_once "mvc/views/" . $view . ".php";
     }
+
+    public function middleWare($data = [])
+    {
+        if (!is_array($data)) {
+            return "Data is a array";
+        };
+
+        if ((empty($_SESSION['user']) && !isset($data['auth']))) {
+            return header("Location: /LTWeb/authentication/login");
+        };
+    }
 }

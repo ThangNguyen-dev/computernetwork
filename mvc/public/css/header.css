@@ -5,11 +5,6 @@
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
-#header {
-    height: 90px;
-
-}
-
 #logo {
     height: 50px;
     background-color: #17558a;
@@ -25,7 +20,7 @@
 }
 
 #nav-menu {
-    height: 40px;
+    height: 2.5rem;
     position: sticky;
 }
 
@@ -53,4 +48,13 @@
 
 #nav-menu ul li a:hover {
     color: red;
+}
+
+#user a {
+    line-height: 2.5rem;
+    text-decoration: none;
+}
+
+#user a:hover {
+    color: red !important;
 }

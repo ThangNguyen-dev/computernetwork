@@ -2,17 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Forum Lap Trinh</title>
+    <title>Computer Network Notes</title>
+    <meta name="title" content="Computer Network Notes"/>
+    <meta name="description" content="Technology, Network, Linux and CCNA"/>
     <!--    font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
+    <?php if (isset($data['linux']['thumbnail_img_url'])): ?>
+        <link rel="image_src" href="<?= asset($data['linux']['thumbnail_img_url']) ?>"/>
+    <?php endif; ?>
     <!--    css-->
     <link rel="stylesheet" href="<?= asset('css/common.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/header.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/main.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/login.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/editor.css') ?>">
 </head>
 <body>
 
@@ -21,9 +28,7 @@
 <!--END HEADING-->
 
 <!--MAIN-->
-<main id="main">
-    <?php require_once "mvc/views/{$data['page']}.php" ?>
-</main>
+<?php require_once "mvc/views/{$data['page']}.php" ?>
 
 <!--FOOTER-->
 <?php require_once 'mvc/views/layouts/footer.php' ?>

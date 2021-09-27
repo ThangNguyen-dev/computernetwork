@@ -12,18 +12,17 @@ class App
         $array = $this->urlProcess();
 
         // get controller and check Controller exists
+        $this->controller = $this->setController('HomeController');
         if ($array && isset($array[0]) && file_exists('./mvc/app/controllers/' . ucfirst($array[0]) . 'Controller.php')) {
             $this->controller = $this->setController(ucfirst($array[0]) . 'Controller');
             unset($array[0]);
-        } else {
-            $this->controller = $this->setController('HomeController');
         }
 
-        if (!empty($array)) {
+        // get action and check action exists
+        $this->action = $this->setAction('index');
+        if (!empty($array[1])) {
             $this->action = $this->setAction($array[1]);
             unset($array[1]);
-        } else {
-            $this->action = $this->setAction('index');
         }
 
         $array ? $this->params = array_values($array) : [];
@@ -39,7 +38,7 @@ class App
         return new $controller;
     }
 
-    public function setAction($action)
+    public function setAction($action): string
     {
         return $this->action = strtolower($action);
     }
@@ -48,7 +47,7 @@ class App
      *  get controller, action, params from url
      * @return string
      */
-    protected function urlProcess()
+    protected function urlProcess(): array
     {
         $url = array();
         if (isset($_GET['url'])) {

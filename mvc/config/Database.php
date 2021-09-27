@@ -27,37 +27,9 @@ class Database
         return static::class;
     }
 
-    /**
-     * get all data from database
-     */
-    public function where($id)
-    {
-        return $this->conn->query("SELECT * FROM `posts` WHERE id={{$id}}");
-    }
-
     public function all($table = "posts")
     {
         return $this->conn->query("SELECT * FROM `{{$table}}`");
-    }
-
-    public function store($data)
-    {
-        $columns = "";
-        $values = "";
-        if (!is_array($data)) {
-            return [
-                'mess' => 'Data must is array',
-            ];
-        }
-        foreach ($data as $key => $value) {
-            if ($key == count($data)) {
-                $columns .= '\'' . $key . '\'';
-                $values .= '\'' . $values . '\'';
-            }
-            $columns .= '\'' . $key . ',';
-            $values .= '\'' . $values . '\',';
-        }
-        $this->conn->query("INSERT INTO `{{$this::class()}}`({{$columns}}) VALUES ({{$values}})");
     }
 
     public function update($sql)
@@ -67,7 +39,7 @@ class Database
 
     public function delete($id)
     {
-        $result = $this->conn->query("DELETE FROM `posts` WHERE id = {{$id}}");
+        $result = $this->conn->query("DELETE FROM `posts` WHERE id = {$id}");
         if ($result) {
             return $result;
         } else {
@@ -76,5 +48,3 @@ class Database
     }
 
 }
-
-$Database = new Database();

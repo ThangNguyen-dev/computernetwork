@@ -1,5 +1,5 @@
 #main {
-    margin: 25px;
+    margin:0.5rem 2rem;
 }
 
 #main > h3 {
@@ -12,6 +12,7 @@
     text-decoration: none;
     color: black;
     text-shadow: 1px 3px 2px rgb(0 0 0 / 30%);
+    margin-left: 1rem;
 }
 
 article {
@@ -29,6 +30,7 @@ article {
 .item-heading {
     margin: 0.1rem;
     border-bottom: 1px solid #b9b9b9;
+    height: 4rem;
 }
 
 .item-heading > a {
@@ -72,4 +74,28 @@ article {
 
 .item-footer > a > p {
     padding-top: 0.5rem;
+}
+
+.detail {
+    margin: 6rem 10rem !important;
+}
+
+.detail h1 {
+    margin-left: 0px;
+    margin-bottom: 2rem;
+}
+
+.detail h3 {
+    font-size: 1.5rem;
+}
+
+h1, h2, h3 {
+    text-shadow: 1px 3px 2px rgb(0 0 0 / 30%);
+}
+
+pre {
+    background-color: #e5e8ec;
+    border: solid 0.1rem #7aa5cb;
+    padding: 0.3rem;
+    margin: 0.3rem;
 }
