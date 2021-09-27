@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,6 +26,20 @@
             </div>
             <div class="input-email">
                 <input type="password" name="password" id="password" class="p-1" placeholder="Password">
+            </div>
+            <?php
+            if (isset($_SESSION['create'])): ?>
+                <div class="alert">
+                    <?= $_SESSION['create'];
+                    unset($_SESSION['create']); ?>
+                </div>
+            <?php endif; ?>
+            <div class="alert">
+                <a href="/LTWeb/" style="text-decoration: none; ">Home</a>
+                <a href="/LTWeb/authentication/forgot/" style="text-decoration: none; ">Forgot password ?</a>
+            </div>
+            <div class="btn btn-primary">
+                <a href="/LTWeb/authentication/registry" style="text-decoration: none; ">Registry</a>
             </div>
             <input type="submit" style="font-weight: bolder" value="Submit" class="p-1">
         </form>

@@ -43,7 +43,10 @@
                 </div>
             <?php endif; ?>
 
-            <input type="submit" style="font-weight: bolder" value="Submit" class="p-1">
+            <div class="btn btn-primary">
+                <a href="/LTWeb/authentication/login" style="text-decoration: none; ">Login</a>
+            </div>
+            <input type="submit" style="font-weight: bolder" value="Registry" class="p-1">
 
         </form>
     </div>

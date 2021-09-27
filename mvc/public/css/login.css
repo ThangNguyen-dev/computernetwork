@@ -2,15 +2,31 @@
     text-align: center;
 }
 
-.from input{
+.from input {
     border-radius: 0.2rem;
     margin-top: 0.5rem;
     min-width: 30rem;
     min-height: 2rem;
 }
-.from input[type=submit]{
+
+.from input[type=submit] {
     background-color: #17558a;
     color: white;
-    width: 100%;
+    width: 89%;
     cursor: pointer;
+}
+
+.from div.btn {
+    margin-top: 0.5rem;
+    background-color: #17558a;
+    width: 30rem;
+    padding: 0.4rem;
+    border-radius: 0.1rem;
+}
+
+.from div.btn a {
+    display: flex;
+    justify-content: center;
+    width: 30rem;
+    color: white;
 }

@@ -5,7 +5,8 @@
 .mt-5 {
     margin-top: 1.7rem;
 }
-.mt-3{
+
+.mt-3 {
     margin-top: 1rem;
 }
 
@@ -118,4 +119,8 @@
     font-weight: bolder;
     text-align: center;
     margin-top: 1rem;
+}
+
+.alert > a:hover {
+    color: red;
 }

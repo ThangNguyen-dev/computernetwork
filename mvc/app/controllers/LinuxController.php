@@ -28,7 +28,7 @@ class LinuxController extends Controller
         return $this->view('layouts/app', ['page' => 'linux/create']);
     }
 
-    public function store($data)
+    public function store()
     {
 
     }

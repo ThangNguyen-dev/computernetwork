@@ -28,6 +28,9 @@ class Model extends Database
         } else {
             $result = $database->conn->query("SELECT * FROM `" . strtolower(self::class()) . "s` WHERE {$data['key']}='{$data['value']}' AND `type` = '" . $data['type'] . "'");
         }
+        if (empty($result)) {
+            return false;
+        }
         $results = array();
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             array_push($results, $row);
