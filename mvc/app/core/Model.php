@@ -20,7 +20,7 @@ class Model extends Database
     public static function where($data)
     {
         if (empty($data)) {
-            return header('Location: /LTWeb/' . self::class());
+            return header('Location: http://computernetworknotes.test/' . self::class());
         }
         $database = new Database();
         if ($data['type'] == 'users') {

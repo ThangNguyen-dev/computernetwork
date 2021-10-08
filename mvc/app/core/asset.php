@@ -1,7 +1,7 @@
 <?php
 function asset($fileName)
 {
-    return ("/LTWeb/mvc/public/" . $fileName);
+    return ("http://computernetworknotes.test/mvc/public/" . $fileName);
 };
 function generateRandomString($length = 25) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

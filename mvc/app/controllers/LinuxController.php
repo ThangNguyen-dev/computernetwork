@@ -3,24 +3,21 @@
 
 class LinuxController extends Controller
 {
-    public function __construct()
-    {
-//        $this->middleWare(['auth']);
-    }
-
     public function index()
     {
         $currentPge = 1;
-
-        if (isset($_REQUEST['page']) && isset($_REQUEST['page']) != 1) {
-            $currentPge = $_REQUEST['page'];
+        if (empty(explode('?', $_SERVER['REQUEST_URI'])[1])) {
+            $currentPge = 1;
+        } else {
+            // get page form url
+            $currentPge = (explode('=', explode('?', $_SERVER['REQUEST_URI'])[1])[1]);
         }
 
         $maxPage = Post::query('SELECT COUNT(*) FROM `posts`WHERE type = "linux"');
-
+        $maxPage = ceil(($maxPage[0]['COUNT(*)']) / 10);
         $start = ($currentPge - 1) * 10;
         $result = Post::query("SELECT * FROM `posts` WHERE `type` = 'linux' LIMIT {$start},10");
-        return $this->view('layouts/app', ['page' => 'linux/index', 'linux' => $result]);
+        return $this->view('layouts/app', ['page' => 'linux/index', 'linux' => $result,'maxpage' => $maxPage, 'currentpage' => $currentPge]);
     }
 
     public function create()
@@ -30,13 +27,12 @@ class LinuxController extends Controller
 
     public function store()
     {
-
     }
 
     public function show($data)
     {
         if (empty($data)) {
-            return header('Location: /LTWeb/linux');
+            return header('Location: http://computernetworknotes.test/linux');
         }
         $linux = Post::where(['key' => 'id', 'value' => $data, 'type' => 'linux']);
         return $this->view('layouts/app', ['page' => 'linux/detail', 'linux' => $linux]);
@@ -44,7 +40,6 @@ class LinuxController extends Controller
 
     public function edit()
     {
-
     }
 
     public function update()

@@ -10,7 +10,6 @@ class App
     public function __construct()
     {
         $array = $this->urlProcess();
-
         // get controller and check Controller exists
         $this->controller = $this->setController('HomeController');
         if ($array && isset($array[0]) && file_exists('./mvc/app/controllers/' . ucfirst($array[0]) . 'Controller.php')) {

@@ -20,7 +20,7 @@ class Controller
         };
 
         if ((empty($_SESSION['user']) && !isset($data['auth']))) {
-            return header("Location: /LTWeb/authentication/login");
+            return header("Location: http://computernetworknotes.test/authentication/login");
         };
     }
 }

@@ -21,7 +21,7 @@ class PostController extends Controller
         $thumbnail_img_url = '';
         $date = new DateTime();
         $timestamp = $date->getTimestamp();
-        $target_dir = $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/LTWeb/mvc/public/uploads/img/';
+        $target_dir = $_SERVER['CONTEXT_DOCUMENT_ROOT'] . 'http://computernetworknotes.test/mvc/public/uploads/img/';
 
         $target_file = $target_dir . $timestamp . '.' . pathinfo($_FILES['img']['name'], PATHINFO_EXTENSION);
         if (move_uploaded_file($_FILES['img']['tmp_name'], $target_file)) {
@@ -39,7 +39,7 @@ class PostController extends Controller
         ]);
         $type = $_POST['type'];
 
-        return header("Location: /LTWeb/{$type}/show/{$id}");
+        return header("Location: http://computernetworknotes.test/{$type}/show/{$id}");
 
     }
 

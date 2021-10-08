@@ -21,7 +21,7 @@
     <h1 class="mb-5">Registry Computer Network Notes</h1>
 
     <div class="from d-flex justify-content-center mt-5">
-        <form action="/LTWeb/authentication/store" method="post">
+        <form action="http://computernetworknotes.test/authentication/store" method="post">
             <div class="input-email">
                 <input type="text" name="email" id="email" class="p-1" placeholder="Email">
             </div>
@@ -44,7 +44,7 @@
             <?php endif; ?>
 
             <div class="btn btn-primary">
-                <a href="/LTWeb/authentication/login" style="text-decoration: none; ">Login</a>
+                <a href="http://computernetworknotes.test/authentication/login" style="text-decoration: none; ">Login</a>
             </div>
             <input type="submit" style="font-weight: bolder" value="Registry" class="p-1">
 
@@ -52,7 +52,7 @@
     </div>
 </main>
 
-<script src="/LTWeb/mvc/public//js/custom.js'"></script>
+<script src="http://computernetworknotes.test/mvc/public//js/custom.js'"></script>
 
 <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div>
 <iframe id="nr-ext-rsicon"

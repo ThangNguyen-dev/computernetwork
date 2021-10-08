@@ -5,12 +5,12 @@
 
     RewriteEngine On
 
-    RewriteBase /LTWeb/
+    #   RewriteBase /computernetworknotes.test/
 
 #    access to puclic folder to get css, js, img
     RewriteRule ^CSS/(.*) public/css/$1
     RewriteRule ^JS/(.*) public/js/$1
-    RewriteRule ^FONT/(.*) public/img/$1
+    RewriteRule ^IMG/(.*) public/img/$1
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

@@ -20,7 +20,7 @@
 <main id="main" style="margin-top: 5rem">
     <h1 class="mb-5">Login Computer Network Notes</h1>
     <div class="from d-flex justify-content-center mt-5">
-        <form action="/LTWeb/authentication/checkLogin" method="post">
+        <form action="http://computernetworknotes.test/authentication/checkLogin" method="post">
             <div class="input-email">
                 <input type="text" name="email" id="email" class="p-1" placeholder="Email">
             </div>
@@ -35,18 +35,18 @@
                 </div>
             <?php endif; ?>
             <div class="alert">
-                <a href="/LTWeb/" style="text-decoration: none; ">Home</a>
-                <a href="/LTWeb/authentication/forgot/" style="text-decoration: none; ">Forgot password ?</a>
+                <a href="http://computernetworknotes.test/" style="text-decoration: none; ">Home</a>
+                <a href="http://computernetworknotes.test/authentication/forgot/" style="text-decoration: none; ">Forgot password ?</a>
             </div>
             <div class="btn btn-primary">
-                <a href="/LTWeb/authentication/registry" style="text-decoration: none; ">Registry</a>
+                <a href="http://computernetworknotes.test/authentication/registry" style="text-decoration: none; ">Registry</a>
             </div>
             <input type="submit" style="font-weight: bolder" value="Submit" class="p-1">
         </form>
     </div>
 </main>
 
-<script src="/LTWeb/mvc/public//js/custom.js'"></script>
+<script src="http://computernetworknotes.test/mvc/public//js/custom.js'"></script>
 
 <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div>
 <iframe id="nr-ext-rsicon"

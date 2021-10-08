@@ -20,7 +20,7 @@
 <main id="main" style="margin-top: 5rem">
     <h1 class="mb-5"> Hi <?= ($user['username']); ?>, New Password Computer Network Notes</h1>
     <div class="from d-flex justify-content-center mt-5">
-        <form action="/LTWeb/authentication/updatepassword" method="post">
+        <form action="http://computernetworknotes.test/authentication/updatepassword" method="post">
             <div class="input-email">
                 <input type="password" name="password" id="password" class="p-1" placeholder="Password">
             </div>
@@ -37,13 +37,13 @@
             <?php endif; ?>
             <input type="submit" style="font-weight: bolder" value="Set New Password" class="p-1">
             <div class="btn btn-primary">
-                <a href="/LTWeb/" style="text-decoration: none; ">Back to home</a>
+                <a href="http://computernetworknotes.test/" style="text-decoration: none; ">Back to home</a>
             </div>
         </form>
     </div>
 </main>
 
-<script src="/LTWeb/mvc/public//js/custom.js'"></script>
+<script src="http://computernetworknotes.test/mvc/public//js/custom.js'"></script>
 
 <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div>
 <iframe id="nr-ext-rsicon"

@@ -27,5 +27,24 @@
     <h3 class="mt-5 ml-5 mb-5" style="margin-left: 1rem;text-align: center; margin-top: 2rem">
         <a href="#main">Back top</a>
     </h3>
+    <?php if ($data['maxpage'] != 1): ?>
+        <div class="pagingation">
+        <?php
+        for ($i = 0; $i < 5; $i++) : ?>
+            <?php
+            if ($data['currentpage'] - 2 + $i > 0 && $data['currentpage'] - 2 + $i <= $data['maxpage']) :
+            ?>
+                <a href="/network?page=<?= $data['currentpage'] - 2 + $i?>" class="button 
+                <?php
+                if ($data['currentpage'] - 2 + $i == $data['currentpage']) {
+                    echo 'active';
+                }
+                ?>">
+                    <?= $data['currentpage'] - 2 + $i ?>
+                </a>
+            <?php endif ?>
+        <?php endfor ?>
+    </div>
+    <?php endif;?>
 
 </main>

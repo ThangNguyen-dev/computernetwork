@@ -5,15 +5,19 @@ class CcnaController extends Controller
     public function index()
     {
         $currentPge = 1;
-
-        if (isset($_REQUEST['page']) && isset($_REQUEST['page']) != 1) {
-            $currentPge = $_REQUEST['page'];
+        if (empty(explode('?', $_SERVER['REQUEST_URI'])[1])) {
+            $currentPge = 1;
+        } else {
+            // get page form url
+            $currentPge = (explode('=', explode('?', $_SERVER['REQUEST_URI'])[1])[1]);
         }
+
         $maxPage = Post::query('SELECT COUNT(*) FROM `posts`WHERE type = "ccna"');
+        $maxPage = ceil(($maxPage[0]['COUNT(*)']) / 10);
         $start = ($currentPge - 1) * 10;
         $result = Post::query("SELECT * FROM `posts` WHERE `type` = 'ccna' LIMIT {$start},10");
 
-        return $this->view('layouts/app', ['page' => 'ccna/index', 'ccna' => $result]);
+        return $this->view('layouts/app', ['page' => 'ccna/index', 'ccna' => $result, 'maxpage' => $maxPage, 'currentpage' => $currentPge]);
     }
 
     public function create()
@@ -29,7 +33,7 @@ class CcnaController extends Controller
     {
 
         if (empty($data)) {
-            return header('Location: /LTWeb/ccna');
+            return header('Location: http://computernetworknotes.test/ccna');
         }
         $ccna = Post::where(['key' => 'id', 'value' => $data, 'type' => 'ccna']);
         return $this->view('layouts/app', ['page' => 'ccna/detail', 'ccna' => $ccna]);
@@ -37,7 +41,6 @@ class CcnaController extends Controller
 
     public function edit()
     {
-
     }
 
     public function update()
