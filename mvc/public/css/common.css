@@ -71,6 +71,10 @@
     flex-direction: row;
 }
 
+.alert.d-flex {
+    justify-content: space-between;
+}
+
 .justify-content-space {
     justify-content: space-between;
 }
