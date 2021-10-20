@@ -16,7 +16,7 @@ class NetworkController extends Controller
         $maxPage = Post::query('SELECT COUNT(*) FROM `posts`WHERE type = "network"');
         $maxPage = ceil(($maxPage[0]['COUNT(*)']) / 10);
         $start = ($currentPge - 1) * 10;
-        $result = Post::query("SELECT * FROM `posts` WHERE `type` = 'network' LIMIT {$start},10");
+        $result = Post::query("SELECT * FROM `posts` WHERE `type` = 'network' ORDER BY `created_at` DESC LIMIT {$start},10");
 
         return $this->view('layouts/app', ['page' => 'network/index', 'network' => $result, 'maxpage' => $maxPage, 'currentpage' => $currentPge]);
     }

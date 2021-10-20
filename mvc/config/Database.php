@@ -29,7 +29,7 @@ class Database
 
     public function all($table = "posts")
     {
-        return $this->conn->query("SELECT * FROM `{{$table}}`");
+        return $this->conn->query("SELECT * FROM `$table`");
     }
 
     public function update($sql)
@@ -46,5 +46,4 @@ class Database
             return false;
         }
     }
-
 }

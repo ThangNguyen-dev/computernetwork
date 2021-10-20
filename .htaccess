@@ -7,7 +7,7 @@
 
     #   RewriteBase /computernetworknotes.test/
 
-#    access to puclic folder to get css, js, img
+    #   access to puclic folder to get css, js, img
     RewriteRule ^CSS/(.*) public/css/$1
     RewriteRule ^JS/(.*) public/js/$1
     RewriteRule ^IMG/(.*) public/img/$1

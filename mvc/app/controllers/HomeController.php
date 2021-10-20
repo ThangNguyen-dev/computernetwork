@@ -10,9 +10,9 @@ class HomeController extends Controller
     {
         $post = new Post();
         $posts = $post->all();
-        $networks = Post::query("SELECT * FROM `posts` WHERE `type` = 'network' LIMIT 1,10");
-        $ccna = Post::query("SELECT * FROM `posts` WHERE `type` = 'ccna' LIMIT 1,10");
-        $linux = Post::query("SELECT * FROM `posts` WHERE `type` = 'linux' LIMIT 1,10");
+        $networks = Post::query("SELECT * FROM `posts` WHERE `type` = 'network' ORDER BY `created_at` DESC LIMIT 1,10");
+        $ccna = Post::query("SELECT * FROM `posts` WHERE `type` = 'ccna' ORDER BY `created_at` DESC LIMIT 1,10");
+        $linux = Post::query("SELECT * FROM `posts` WHERE `type` = 'linux' ORDER BY `created_at` DESC LIMIT 1,10");
         return $this->view('layouts/app', ['page' => 'home', 'network' => $networks, 'ccna' => $ccna, 'linux' => $linux]);
     }
 

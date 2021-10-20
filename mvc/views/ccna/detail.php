@@ -1,5 +1,5 @@
 <?php
-$date = date('m/d/Y H:i', strtotime($data['ccna'][0]['created_by']));
+$date = date('m/d/Y H:i', strtotime($data['ccna'][0]['created_at']));
 ?>
 <main id="main" class="detail">
     <h1>

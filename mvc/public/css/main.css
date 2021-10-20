@@ -83,7 +83,7 @@ pre {
   margin: 0.3rem;
 }
 .button {
-  background-color: #4caf50; /* Green */
+  background-color: #524caf; /* Green */
   border: none;
   color: white;
   padding: 1rem 1rem;
@@ -95,7 +95,7 @@ pre {
 }
 
 .active {
-  background-color: indianred;
+  background-color: #bca5f5;
   pointer-events: none;
 }
 

@@ -16,8 +16,8 @@ class LinuxController extends Controller
         $maxPage = Post::query('SELECT COUNT(*) FROM `posts`WHERE type = "linux"');
         $maxPage = ceil(($maxPage[0]['COUNT(*)']) / 10);
         $start = ($currentPge - 1) * 10;
-        $result = Post::query("SELECT * FROM `posts` WHERE `type` = 'linux' LIMIT {$start},10");
-        return $this->view('layouts/app', ['page' => 'linux/index', 'linux' => $result,'maxpage' => $maxPage, 'currentpage' => $currentPge]);
+        $result = Post::query("SELECT * FROM `posts` WHERE `type` = 'linux' ORDER BY `created_at` DESC LIMIT {$start},10");
+        return $this->view('layouts/app', ['page' => 'linux/index', 'linux' => $result, 'maxpage' => $maxPage, 'currentpage' => $currentPge]);
     }
 
     public function create()

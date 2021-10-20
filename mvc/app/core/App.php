@@ -56,6 +56,4 @@ class App
             return [0 => $this->controller, 1 => $this->action];
         }
     }
-}
-
-;
+};
