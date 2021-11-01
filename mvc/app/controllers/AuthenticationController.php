@@ -23,6 +23,15 @@ class AuthenticationController extends Controller
         return $user;
     }
 
+    public function profile()
+    {
+        $this->middleWare(['auth']);
+        $post = new Post();
+        $posts = $post->query("SELECT * FROM `posts` WHERE `user_id` = {$_SESSION['user']['id']} ORDER BY `created_at` DESC LIMIT 0, 1000");
+
+        return $this->view('layouts/app', ['page' => 'auth/profile', 'post' => $posts]);
+    }
+
     public function login()
     {
         if (isset($_SESSION['user'])) {
@@ -71,7 +80,7 @@ class AuthenticationController extends Controller
         $user = User::where(['key' => 'email', 'value' => $_REQUEST['email'], 'type' => 'users']);
         if (!isset($user[0]['email']) && !isset($user[0]['password'])) {
             unset($_SESSION['user']);
-            $_SESSION['create'] = "Email and password not isset";
+            $_SESSION['create'] = "Email and password not correct";
             return header("Location: http://computernetworknotes.test/authentication/login");
         }
         if (password_verify($_REQUEST['password'], $user[0]['password'])) {
@@ -79,7 +88,7 @@ class AuthenticationController extends Controller
             $_SESSION['user'] = $user[0];
             return header('Location: http://computernetworknotes.test');
         } else {
-            // return header("Location: http://computernetworknotes.test/authentication/login");
+            return header("Location: http://computernetworknotes.test/authentication/login");
         }
     }
 

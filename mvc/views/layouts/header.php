@@ -19,7 +19,7 @@
                 <a href="http://computernetworknotes.test/authentication/registry" href="#" style="color: white; margin-right: 1rem">Registry</a>
             <?php else : ?>
                 <a href="http://computernetworknotes.test/post/create" style="color: white; margin-right: 1rem">New Post</a>
-                <a href="#" aria-disabled="true" style="color: white; margin-right: 1rem" class="d-flex">
+                <a href="http://computernetworknotes.test/authentication/profile" aria-disabled="true" style="color: white; margin-right: 1rem" class="d-flex">
                     <img src="" alt="" style="width: 2rem; height: 2rem; margin-top: 0.2rem" srcset="<?= asset('/img/img.png'); ?>">
                     <p class="ml-5" style="margin-left: 0.5rem"><?= $_SESSION['user']['username'] ?></p>
                 </a>
