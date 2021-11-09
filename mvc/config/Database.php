@@ -7,10 +7,10 @@ use PDOException;
 
 class Database
 {
-    private $DBHOST = 'remotemysql.com';
-    private $DBNAME = 'L2AKIahLce';
-    private $DBUSERNAME = 'L2AKIahLce';
-    private $DBPASSWORD = '0wRqkAW3ET';
+    private $DBHOST = 'databases.000webhost.com';
+    private $DBNAME = 'id11979942_wp_3bc4eb59029a83cab6502315a4039979';
+    private $DBUSERNAME = 'id11979942_wp_3bc4eb59029a83cab6502315a4039979';
+    private $DBPASSWORD = '1bcdg}0wtdn@9SYh';
     protected $conn;
     private $columns;
     private $values;
