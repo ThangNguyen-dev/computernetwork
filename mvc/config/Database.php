@@ -7,10 +7,10 @@ use PDOException;
 
 class Database
 {
-    private $DBHOST = 'databases.000webhost.com';
-    private $DBNAME = 'id11979942_wp_3bc4eb59029a83cab6502315a4039979';
-    private $DBUSERNAME = 'id11979942_wp_3bc4eb59029a83cab6502315a4039979';
-    private $DBPASSWORD = '1bcdg}0wtdn@9SYh';
+    private $DBHOST = 'fdb18.awardspace.net';
+    private $DBNAME = '3124863_computer';
+    private $DBUSERNAME = '3124863_computer';
+    private $DBPASSWORD = 'yJ;B^6*c4?Vt[MXn';
     protected $conn;
     private $columns;
     private $values;
