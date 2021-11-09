@@ -7,10 +7,10 @@ use PDOException;
 
 class Database
 {
-    private $DBHOST = 'localhost';
-    private $DBNAME = 'forum';
-    private $DBUSERNAME = 'root';
-    private $DBPASSWORD = '';
+    private $DBHOST = 'https://databases-auth.000webhost.com/';
+    private $DBNAME = 'id11979942_wp_3bc4eb59029a83cab6502315a4039979';
+    private $DBUSERNAME = 'id11979942_wp_3bc4eb59029a83cab6502315a4039979';
+    private $DBPASSWORD = '{}c([IvVWePYc0MJ';
     protected $conn;
     private $columns;
     private $values;
