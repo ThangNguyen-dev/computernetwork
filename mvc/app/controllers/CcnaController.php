@@ -1,5 +1,10 @@
 <?php
 
+namespace app\controllers;
+
+use app\models\Post;
+use app\core\Controller;
+
 class CcnaController extends Controller
 {
     public function index()

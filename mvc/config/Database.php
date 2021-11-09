@@ -1,5 +1,8 @@
 <?php
 
+namespace config;
+use PDO;
+use PDOException;
 class Database
 {
     private $DBHOST = 'localhost';
@@ -19,10 +22,7 @@ class Database
         }
     }
 
-    /**
-     * @return string class name
-     */
-    public static function class(): string
+    public static function getClass()
     {
         return static::class;
     }

@@ -1,11 +1,14 @@
 <?php
 
+namespace app\controllers;
+
+use app\core\Controller;
+use app\models\Post;
 class HomeController extends Controller
 {
     public function __construct()
     {
     }
-
     public function index()
     {
         $post = new Post();
@@ -15,31 +18,4 @@ class HomeController extends Controller
         $linux = Post::query("SELECT * FROM `posts` WHERE `type` = 'linux' ORDER BY `created_at` DESC LIMIT 1,10");
         return $this->view('layouts/app', ['page' => 'home', 'network' => $networks, 'ccna' => $ccna, 'linux' => $linux]);
     }
-
-    public function create()
-    {
-
-    }
-
-    public function store()
-    {
-    }
-
-    public function show()
-    {
-    }
-
-    public function edit()
-    {
-
-    }
-
-    public function update()
-    {
-    }
-
-    public function destroy()
-    {
-
-    }
-}
+};

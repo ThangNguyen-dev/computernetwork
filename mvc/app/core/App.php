@@ -1,6 +1,8 @@
 <?php
-session_start();
 
+namespace app\core;
+
+session_start();
 class App
 {
     protected $controller;
@@ -33,11 +35,18 @@ class App
     public function setController($controller)
     {
         $this->controller = ucfirst($controller);
-        require_once("mvc/app/controllers/" . ucfirst($controller) . ".php");
-        return new $controller;
+        if (file_exists("./mvc/app/controllers/" . ucfirst($controller) . ".php")) {
+            require_once "./mvc/app/controllers/" . ucfirst($controller) . ".php";
+        } else {
+            echo "File " . "./mvc/app/controllers/" . ucfirst($controller) . ".php" . "Not found";
+            die;
+        }
+        $newController = 'app\controllers\\' . $controller;
+        $classController = new $newController();
+        return $classController;
     }
 
-    public function setAction($action): string
+    public function setAction($action)
     {
         return $this->action = strtolower($action);
     }
@@ -46,7 +55,7 @@ class App
      *  get controller, action, params from url
      * @return string
      */
-    protected function urlProcess(): array
+    protected function urlProcess()
     {
         $url = array();
         if (isset($_GET['url'])) {

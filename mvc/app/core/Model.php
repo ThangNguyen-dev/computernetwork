@@ -1,5 +1,9 @@
 <?php
-require_once "./mvc/config/Database.php";
+
+namespace app\core;
+
+use config\Database;
+use PDO;
 
 class Model extends Database
 {
@@ -20,13 +24,15 @@ class Model extends Database
     public static function where($data)
     {
         if (empty($data)) {
-            return header('Location: http://computernetworknotes.test/' . self::class());
+            return header('Location: http://computernetworknotes.test/' . self::getClass());
         }
+
         $database = new Database();
+
         if ($data['type'] == 'users') {
-            $result = $database->conn->query("SELECT * FROM `" . strtolower(self::class()) . "s` WHERE `{$data['key']}`='{$data['value']}'");
+            $result = $database->conn->query("SELECT * FROM `" . strtolower(self::getClass()) . "s` WHERE `{$data['key']}`='{$data['value']}'");
         } else {
-            $result = $database->conn->query("SELECT * FROM `" . strtolower(self::class()) . "s` WHERE {$data['key']}='{$data['value']}' AND `type` = '" . $data['type'] . "'");
+            $result = $database->conn->query("SELECT * FROM `" . strtolower(self::getClass()) . "s` WHERE {$data['key']}='{$data['value']}' AND `type` = '" . $data['type'] . "'");
         }
         if (empty($result)) {
             return false;
@@ -57,9 +63,8 @@ class Model extends Database
             }
         }
         $database = new Database();
-        $database->conn->query("INSERT INTO `" . self::class() . "s`({$columns}) VALUES ({$values})");
+        $database->conn->query("INSERT INTO `" . self::class . "s`({$columns}) VALUES ({$values})");
         $database->conn->lastInsertId();
         return $database->conn->lastInsertId();;
     }
-
 }

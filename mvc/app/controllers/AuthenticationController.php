@@ -1,6 +1,12 @@
 <?php
 
-require_once('mvc/config/Database.php');
+namespace app\controllers;
+
+use app\core\Controller;
+use app\models\User;
+use app\core\Asset;
+use app\models\Post;
+
 
 class AuthenticationController extends Controller
 {
@@ -77,12 +83,15 @@ class AuthenticationController extends Controller
             $_SESSION['create'] = "Email and password is required";
             return header("Location: http://computernetworknotes.test/authentication/login");
         };
+
         $user = User::where(['key' => 'email', 'value' => $_REQUEST['email'], 'type' => 'users']);
+
         if (!isset($user[0]['email']) && !isset($user[0]['password'])) {
             unset($_SESSION['user']);
             $_SESSION['create'] = "Email and password not correct";
             return header("Location: http://computernetworknotes.test/authentication/login");
         }
+
         if (password_verify($_REQUEST['password'], $user[0]['password'])) {
             unset($_SESSION['loginFailed']);
             $_SESSION['user'] = $user[0];
@@ -110,7 +119,7 @@ class AuthenticationController extends Controller
             return header("Location: http://computernetworknotes.test/authentication/forgot");
         };
 
-        $token = generateRandomString();
+        $token = Asset::generateRandomString();
         User::query("UPDATE `users` SET `token`='" . $token . "' WHERE email = '" . $user[0]['email'] . "'");
 
         $urlResetPassword = "http://computernetworknotes.test/authentication/setNewPassword?email=" . $_REQUEST['email'] . "&token=" . $token;

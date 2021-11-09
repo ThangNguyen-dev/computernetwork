@@ -1,5 +1,9 @@
 <?php
-require_once 'mvc/app/core/Controller.php';
+
+namespace app\controllers;
+
+use app\core\Controller;
+use app\models\Post;
 
 class NetworkController extends Controller
 {

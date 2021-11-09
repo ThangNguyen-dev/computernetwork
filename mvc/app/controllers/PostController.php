@@ -1,5 +1,11 @@
 <?php
 
+namespace app\controllers;
+
+use app\core\Controller;
+use DateTime;
+use app\models\Post;
+
 class PostController extends Controller
 {
     public function index()
@@ -40,7 +46,6 @@ class PostController extends Controller
         $type = $_POST['type'];
 
         return header("Location: http://computernetworknotes.test/{$type}/show/{$id}");
-
     }
 
     public function show()
@@ -49,7 +54,6 @@ class PostController extends Controller
 
     public function edit()
     {
-
     }
 
     public function update()
