@@ -1,8 +1,10 @@
 <?php
 
 namespace config;
+
 use PDO;
 use PDOException;
+
 class Database
 {
     private $DBHOST = 'localhost';
@@ -24,7 +26,7 @@ class Database
 
     public static function getClass()
     {
-        return static::class;
+        return explode('\\', static::class)[count(explode('\\', static::class)) - 1];
     }
 
     public function all($table = "posts")

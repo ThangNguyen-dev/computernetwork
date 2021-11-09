@@ -41,6 +41,7 @@ class CcnaController extends Controller
             return header('Location: http://computernetworknotes.test/ccna');
         }
         $ccna = Post::where(['key' => 'id', 'value' => $data, 'type' => 'ccna']);
+        // var_dump($ccna);
         return $this->view('layouts/app', ['page' => 'ccna/detail', 'ccna' => $ccna]);
     }
 

@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registry</title>
     <!--    css-->
-    <link rel="stylesheet" href="<?= asset('css/common.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/header.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/main.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/login.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/common.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/header.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/main.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/footer.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/login.css') ?>">
 </head>
 <body>
 <body>

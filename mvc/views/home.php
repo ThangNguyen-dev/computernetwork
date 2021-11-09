@@ -2,7 +2,11 @@
 <main id="main">
     <h3 class=""><a href="#">Network Administrator</a></h3>
     <div class="d-flex justify-content-space mt-3">
-        <?php for ($i = 0; $i < 2; $i++): ?>
+        <?php
+
+use app\core\Asset;
+
+for ($i = 0; $i < 2; $i++): ?>
             <article class="item mr-5 border-ccc">
                 <div class="item-heading p-2 m-2">
                     <a href="network/show/<?= $data['network'][$i]['id'] ?>"><?= $data['network'][$i]['title'] ?></a>
@@ -13,7 +17,7 @@
                 <div class="item-footer mr-5 ml-5 d-flex justify-content-end">
                     <a href="network/show/<?= $data['network'][$i]['id'] ?>" class="d-flex">
                         <p class="pt-2">VIEW</p>
-                        <img src="<?= asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
+                        <img src="<?=Asset::asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
                     </a>
                 </div>
             </article>
@@ -35,7 +39,7 @@
             <div id="view-article" class="item-footer mr-5 ml-5 d-flex justify-content-end">
                 <a href="./network" class="d-flex">
                     <p class="pt-2">VIEW ALL ARTICLE</p>
-                    <img src="<?= asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
+                    <img src="<?=Asset::asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
                 </a>
             </div>
         </article>
@@ -56,7 +60,7 @@
                 <div class="item-footer mr-5 ml-5 d-flex justify-content-end">
                     <a href="ccna/show/<?= $data['ccna'][$i]['id'] ?>" class="d-flex">
                         <p class="pt-2">VIEW</p>
-                        <img src="<?= asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
+                        <img src="<?=Asset::asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
                     </a>
                 </div>
             </article>
@@ -78,7 +82,7 @@
             <div id="view-article" class="item-footer mr-5 ml-5 d-flex justify-content-end">
                 <a href="./ccna" class="d-flex">
                     <p class="pt-2">VIEW ALL ARTICLE</p>
-                    <img src="<?= asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
+                    <img src="<?=Asset::asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
                 </a>
             </div>
         </article>
@@ -98,7 +102,7 @@
                 <div class="item-footer mr-5 ml-5 d-flex justify-content-end">
                     <a href="linux/show/<?= $data['linux'][$i]['id'] ?>" class="d-flex">
                         <p class="pt-2">VIEW</p>
-                        <img src="<?= asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
+                        <img src="<?=Asset::asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
                     </a>
                 </div>
             </article>
@@ -120,7 +124,7 @@
             <div id="view-article" class="item-footer mr-5 ml-5 d-flex justify-content-end">
                 <a href="./linux" class="d-flex">
                     <p class="pt-2">VIEW ALL ARTICLE</p>
-                    <img src="<?= asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
+                    <img src="<?=Asset::asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
                 </a>
             </div>
         </article>

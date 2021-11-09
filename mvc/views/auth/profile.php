@@ -18,7 +18,7 @@
                     <div class="item-footer mr-5 ml-5 d-flex justify-content-end">
                         <a href="../../<?= $post['type'] ?>/show/<?= $post['id'] ?>" class="d-flex">
                             <p class="pt-2">VIEW</p>
-                            <img src="<?= asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
+                            <img src="<?=Asset::asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
                         </a>
                     </div>
                 </article>

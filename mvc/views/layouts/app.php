@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php use app\core\Asset;?>
 <head>
     <meta charset="UTF-8">
     <title>Computer Network Notes</title>
-    <link rel="shortcut icon" href="<?=asset('img/shortcut.png')?>">
+    <link rel="shortcut icon" href="<?=Asset::asset('img/shortcut.png')?>">
 
     <meta name="title" content="Computer Network Notes"/>
     <meta name="description" content="Technology, Network, Linux and CCNA"/>
@@ -14,16 +15,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
     <?php if (isset($data['linux']['thumbnail_img_url'])): ?>
-        <link rel="image_src" href="<?= asset($data['linux']['thumbnail_img_url']) ?>"/>
+        <link rel="image_src" href="<?=Asset::asset($data['linux']['thumbnail_img_url']) ?>"/>
     <?php endif; ?>
     <!--    css-->
-    <link rel="stylesheet" href="<?= asset('css/common.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/header.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/main.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/login.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/editor.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/responsive.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/common.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/header.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/main.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/footer.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/login.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/editor.css') ?>">
+    <link rel="stylesheet" href="<?=Asset::asset('css/responsive.css') ?>">
 </head>
 <body>
 
@@ -37,6 +38,6 @@
 <!--FOOTER-->
 <?php require_once 'mvc/views/layouts/footer.php' ?>
 
-<script src="<?= asset('/js/custom.js') ?>'"></script>
+<script src="<?=Asset::asset('/js/custom.js') ?>'"></script>
 </body>
 </html>

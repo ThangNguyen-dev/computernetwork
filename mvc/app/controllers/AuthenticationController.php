@@ -41,7 +41,7 @@ class AuthenticationController extends Controller
     public function login()
     {
         if (isset($_SESSION['user'])) {
-            return header("Location: http://computernetworknotes.test/");
+            return header("Location: ");
         }
         return require_once "mvc/views/auth/login.php";
     }

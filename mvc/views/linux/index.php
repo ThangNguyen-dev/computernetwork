@@ -1,5 +1,5 @@
 <!--    Linux TUTORIAL-->
-
+<?php use app\core\Asset;?>
 <main id="main">
     <h3 class="mt-5 ml-5" style="margin-left: 1rem"><a href="#">Linux Tutorials (Latest Tutorials)</a></h3>
     <div class="">
@@ -16,7 +16,7 @@
                     <div class="item-footer mr-5 ml-5 d-flex justify-content-end">
                         <a href="linux/show/<?= $linux['id'] ?>" class="d-flex">
                             <p class="pt-2">VIEW</p>
-                            <img src="<?= asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
+                            <img src="<?=Asset::asset('img/iconview.png') ?>" class="mr-2" title="view" alt="view icon">
                         </a>
                     </div>
                 </article>
