@@ -63,8 +63,7 @@ class Model extends Database
             }
         }
         $database = new Database();
-        $database->conn->query("INSERT INTO `" . self::class . "s`({$columns}) VALUES ({$values})");
-        $database->conn->lastInsertId();
+        $results = $database->conn->query("INSERT INTO `" . self::getClass() . "s`({$columns}) VALUES ({$values})");
         return $database->conn->lastInsertId();;
     }
 }

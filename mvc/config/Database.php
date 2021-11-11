@@ -7,10 +7,10 @@ use PDOException;
 
 class Database
 {
-    private $DBHOST = 'fdb18.awardspace.net';
-    private $DBNAME = '3124863_computer';
-    private $DBUSERNAME = '3124863_computer';
-    private $DBPASSWORD = 'yJ;B^6*c4?Vt[MXn';
+    private $DBHOST = 'localhost';
+    private $DBNAME = 'forum';
+    private $DBUSERNAME = 'root';
+    private $DBPASSWORD = '';
     protected $conn;
     private $columns;
     private $values;
