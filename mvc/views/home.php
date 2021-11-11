@@ -5,7 +5,6 @@
         <?php
 
         use app\core\Asset;
-
         for ($i = 0; $i < 2; $i++) : ?>
             <article class="item mr-5 border-ccc">
                 <div class="item-heading p-2 m-2">

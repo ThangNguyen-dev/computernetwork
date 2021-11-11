@@ -38,7 +38,7 @@ class CcnaController extends Controller
     {
 
         if (empty($data)) {
-            return header('Location: http://computernetworknotes.test/ccna');
+            return header('Location: " . Asset::url() . "/ccna');
         }
         $ccna = Post::where(['key' => 'id', 'value' => $data, 'type' => 'ccna']);
         // var_dump($ccna);

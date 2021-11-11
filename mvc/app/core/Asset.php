@@ -6,7 +6,7 @@ class Asset
 {
     public static function asset($fileName)
     {
-        return ("http://computernetworknotes.test/mvc/public/" . $fileName);
+        return Asset::url() . "/mvc/public/" . $fileName;
     }
     public static function generateRandomString($length = 25)
     {
@@ -17,5 +17,10 @@ class Asset
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
         return $randomString;
+    }
+
+    public static function url()
+    {
+        return "https://" .$_SERVER['SERVER_NAME'];
     }
 }

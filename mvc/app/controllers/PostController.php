@@ -6,6 +6,7 @@ use app\core\Controller;
 use DateTime;
 use app\models\Post;
 use app\models\User;
+use app\core\Asset;
 
 class PostController extends Controller
 {
@@ -28,7 +29,7 @@ class PostController extends Controller
         $thumbnail_img_url = '';
         $date = new DateTime();
         $timestamp = $date->getTimestamp();
-        $target_dir = $_SERVER['CONTEXT_DOCUMENT_ROOT'];
+        $target_dir = $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/mvc/public/uploads/img/';
 
         $target_file = $target_dir . $timestamp . '.' . pathinfo($_FILES['img']['name'], PATHINFO_EXTENSION);
         if (move_uploaded_file($_FILES['img']['tmp_name'], $target_file)) {
@@ -44,7 +45,7 @@ class PostController extends Controller
             'thumbnail_img_url' => $thumbnail_img_url,
         ]);
         $type = $_POST['type'];
-        return header("Location: http://computernetworknotes.test/{$type}/show/{$id}");
+        return header("Location: " . Asset::url() . "/{$type}/show/{$id}");
     }
 
     public function show()
@@ -65,10 +66,10 @@ class PostController extends Controller
         $post = Post::query("SELECT `id`, `user_id`, `type`, `title`, `content`, `mini_text`, `view`, `thumbnail_img_url`, `created_at`, `updated_at` FROM `posts` WHERE id = " . $post_id . " AND user_id =" . User::id());
         if (empty($post)) {
             $_SESSION['create'] = "Post Not Found";
-            return header("Location: http://computernetworknotes.test/authentication/profile");
+            return header("Location: " . Asset::url() . "/authentication/profile");
         };
         $isDeleted = Post::query("DELETE FROM `posts` WHERE id = " . $post[0]['id']);
         $_SESSION['create'] = "Post is deleted";
-        return header("Location: http://computernetworknotes.test/authentication/profile");
+        return header("Location: " . Asset::url() . "/authentication/profile");
     }
 }

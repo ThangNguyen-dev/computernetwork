@@ -5,6 +5,7 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\models\Post;
+use app\core\Asset;
 
 class LinuxController extends Controller
 {
@@ -37,7 +38,7 @@ class LinuxController extends Controller
     public function show($data)
     {
         if (empty($data)) {
-            return header('Location: http://computernetworknotes.test/linux');
+            return header("Location: " . Asset::url() . "/linux");
         }
         $linux = Post::where(['key' => 'id', 'value' => $data, 'type' => 'linux']);
         return $this->view('layouts/app', ['page' => 'linux/detail', 'linux' => $linux]);

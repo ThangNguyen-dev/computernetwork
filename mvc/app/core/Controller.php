@@ -21,7 +21,7 @@ class Controller
         };
 
         if ((empty($_SESSION['user']) && !isset($data['auth']))) {
-            return header("Location: http://computernetworknotes.test/authentication/login");
+            return header("Location: " . Asset::url() . "/authentication/login");
         };
     }
 }

@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\models\Post;
+use app\core\Asset;
 
 class NetworkController extends Controller
 {
@@ -36,7 +37,7 @@ class NetworkController extends Controller
     public function show($data)
     {
         if (empty($data)) {
-            return header('Location: http://computernetworknotes.test/network');
+            return header("Location: " . Asset::url() . "/network");
         }
 
         $network = Post::where(['key' => 'id', 'value' => $data, 'type' => 'network']);

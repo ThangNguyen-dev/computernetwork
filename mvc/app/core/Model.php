@@ -24,7 +24,7 @@ class Model extends Database
     public static function where($data)
     {
         if (empty($data)) {
-            return header('Location: http://computernetworknotes.test/' . self::getClass());
+            return header('Location: " . Asset::url() . "/' . self::getClass());
         }
 
         $database = new Database();

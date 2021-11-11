@@ -1,3 +1,4 @@
+<?php use app\core\Asset;?>
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +24,7 @@
             <h1 class="mb-5">Registry Computer Network Notes</h1>
 
             <div class="from d-flex justify-content-center mt-5">
-                <form action="http://computernetworknotes.test/authentication/store" method="post">
+                <form action="<?=Asset::url()?>/authentication/store" method="post">
                     <div class="input-email">
                         <input type="text" name="email" id="email" class="p-1" placeholder="Email">
                     </div>
@@ -46,9 +47,9 @@
                     <?php endif; ?>
 
                     <div class="alert d-flex">
-                        <a href="http://computernetworknotes.test/" style="text-decoration: none; ">Home</a>
-                        <a href="http://computernetworknotes.test/authentication/forgot/" style="text-decoration: none; ">Forgot password ?</a>
-                        <a href="http://computernetworknotes.test/authentication/login" style="text-decoration: none; ">Login</a>
+                        <a href="<?=Asset::url()?>/" style="text-decoration: none; ">Home</a>
+                        <a href="<?=Asset::url()?>/authentication/forgot/" style="text-decoration: none; ">Forgot password ?</a>
+                        <a href="<?=Asset::url()?>/authentication/login" style="text-decoration: none; ">Login</a>
                     </div>
                     <input type="submit" style="font-weight: bolder" value="Registry" class="p-1">
 
@@ -56,7 +57,7 @@
             </div>
         </main>
 
-        <script src="http://computernetworknotes.test/mvc/public//js/custom.js'"></script>
+        <script src="<?=Asset::url()?>/mvc/public//js/custom.js'"></script>
 
         <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div>
         <iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>
