@@ -72,8 +72,9 @@ class AuthenticationController extends Controller
             'password' => password_hash($_REQUEST['password'], PASSWORD_BCRYPT),
             'email' => $_REQUEST['email'],
         ];
-        User::store('users', $data);
+        $id = User::store('users', $data);
         $_SESSION['user'] = $data;
+        $_SESSION['user']['id'] = $id;
         return header("Location: " . Asset::url() . "/home");
     }
 
@@ -95,7 +96,7 @@ class AuthenticationController extends Controller
         if (password_verify($_REQUEST['password'], $user[0]['password'])) {
             unset($_SESSION['loginFailed']);
             $_SESSION['user'] = $user[0];
-            return header('Location: " . Asset::url() . "');
+            return header("Location: " . Asset::url() . "");
         } else {
             return header("Location: " . Asset::url() . "/authentication/login");
         }

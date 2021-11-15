@@ -21,6 +21,6 @@ class Asset
 
     public static function url()
     {
-        return "https://" .$_SERVER['SERVER_NAME'];
+        return "http://" .$_SERVER['SERVER_NAME'];
     }
 }
