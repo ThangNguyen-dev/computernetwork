@@ -1,0 +1,56 @@
+@media only screen and (min-width:600px) and (max-width: 1200px) {
+  .item {
+    min-width: 100%;
+  }
+  #main {
+    min-width: 90% !important;
+    max-width: 100% !important;
+    margin: 2rem !important;
+  }
+  #main h1 {
+    min-width: 100% !important;
+  }
+  #logo {
+    max-width: 100%;
+  }
+  #logo > img {
+    margin-right: 1rem;
+    max-width: 80% !important;
+  }
+  #logo > img:last-child {
+    display: block;
+  }
+  #header {
+    min-width: 90% !important;
+  }
+  #logo > img {
+    margin-right: 0.5rem;
+  }
+  .d-flex {
+    flex-direction: column;
+  }
+  #user{
+    margin-top: -2.5rem;
+    flex-direction: row;
+  }
+  #user>a{
+    margin-top: -2.5rem;
+    flex-direction: row;
+  }
+  article {
+    margin-bottom: 1rem;
+  }
+  .item-footer {
+    margin-left: 1rem;
+    margin-bottom: 1rem !important;
+  }
+  .item-footer,
+  .item-footer a,
+  .item-footer > a > p {
+    display: inline !important;
+  }
+
+  #item-article {
+    width: 100% !important;
+  }
+}

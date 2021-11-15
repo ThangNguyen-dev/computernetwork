@@ -1,0 +1,12 @@
+#editor {
+    margin: 2rem;
+}
+
+.input-type,
+.input-title,
+.input-title input,
+.input-type select {
+    width: 100%;
+    height: 2rem;
+    border-radius: 0.2rem;
+}
